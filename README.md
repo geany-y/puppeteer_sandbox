@@ -11,6 +11,7 @@
 1. [公式](https://pptr.dev/#?product=Puppeteer&version=v1.9.0&show=api-class-page)
 1. [PuppeteerによるヘッドレスChromeの使い方 evaluate](https://iwb.jp/puppeteer-headless-chrome-evaluate/)
 1. [Puppeteerを使ったスクレイピング](https://blog.engineer.adways.net/entry/2018/06/29/150000)
+1. [ページオブジェクトパターン参考](https://honeybe.hatenablog.jp/entry/2018/02/22/192216)
 
 ## メモ
 1. louchに以下を渡さないとエラー
