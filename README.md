@@ -12,6 +12,7 @@
 1. [PuppeteerによるヘッドレスChromeの使い方 evaluate](https://iwb.jp/puppeteer-headless-chrome-evaluate/)
 1. [Puppeteerを使ったスクレイピング](https://blog.engineer.adways.net/entry/2018/06/29/150000)
 1. [ページオブジェクトパターン参考](https://honeybe.hatenablog.jp/entry/2018/02/22/192216)
+1. [チートシート的](http://www.testautomationguru.com/puppeteer-getting-started/)
 
 ## メモ
 1. louchに以下を渡さないとエラー
