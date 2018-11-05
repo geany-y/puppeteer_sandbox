@@ -1,11 +1,19 @@
-//const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
 const puppeteer = require('puppeteer');
 
-const URL = process.env.URL || process.argv[2];
+const URL = process.argv[2] || false;
+if(!URL){ return false; }
 
-puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']}).then(async browser => {
+const default_args = {
+    args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox'
+    ]
+}
+
+puppeteer.launch(default_args).then(async browser => {
   const page = await browser.newPage();
-  //const response = await page.goto(URL);
+  const response = await page.goto(URL);
+/*
 await page.setRequestInterception(true);
 page.on('request', interceptedRequest => {
         if(interceptedRequest.resourceType() == "xhr"){
@@ -13,7 +21,8 @@ page.on('request', interceptedRequest => {
         }
         interceptedRequest.continue();
 });
-  await page.goto(URL);
+*/
+  //await page.screenshot({ path:'test.png', fullPage: true})
 /*
 function logRequest(interceptedRequest) {
     console.log('hoge');
@@ -34,10 +43,13 @@ page.on('request', r => {
         console.log(response.request().resourceType());
         if ('xhr' !== response.request().resourceType()){
             return ;
-        }?
+        }
         console.log(response.url());
     });
 */
-  //console.log(response.text());
+  const html = await response.text();
+  console.log(html);
+  await page.goto(URL);
   await browser.close();
 });
+
