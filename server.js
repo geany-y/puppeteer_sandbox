@@ -3,8 +3,8 @@ var http = require("http"),
     path = require("path"),
     fs = require("fs"),
     qs = require('querystring'),
-    port = process.argv[2] || 8335;
-
+    port =  8335,
+    basedir = process.argv[2];
 
 http.createServer(function(request, response) {
     var Response = {
@@ -51,7 +51,7 @@ http.createServer(function(request, response) {
 
 
     var uri = url.parse(request.url).pathname
-    , filename = path.join(process.cwd(), uri)
+    , filename = './' + path.join(basedir + '/', uri)
     , agent = request.headers['user-agent'];
 
     if(request.method === "GET"){
@@ -83,3 +83,12 @@ http.createServer(function(request, response) {
 }).listen(parseInt(port, 10));
 
 //console.log("Server running at http://localhost:" + port );
+
+/*
+#!/bin/bash
+
+nodeA="./nodeserver/server.js"
+basedir=`dirname "$nodeA"`             
+export basedir
+bash -c "nohup node ${nodeA} ${basedir} &"
+*/
