@@ -14,6 +14,7 @@
 1. [ページオブジェクトパターン参考](https://honeybe.hatenablog.jp/entry/2018/02/22/192216)
 1. [チートシート的(英語)](http://www.testautomationguru.com/puppeteer-getting-started/)
 1. [チートシート的(日本語)](https://syon.github.io/refills/rid/1516155/)
+1. [動的なHTMLの書き換え](https://developers.google.com/web/tools/puppeteer/articles/ssr)
 
 ## メモ
 1. louchに以下を渡さないとエラー
